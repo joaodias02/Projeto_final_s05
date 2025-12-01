@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Inatel - Mural de Vagas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="app-shell">
+        <header>
+            <div class="top-row">
+                <div class="logo">
+                    <div class="logo-icon">IN</div>
+                    <div>Inatel App</div>
+                </div>
+                <div class="user-chip">
+                    <div class="user-avatar">AD</div>
+                    <span>Aluno · Eng. Software</span>
+                </div>
+            </div>
+            <h1>Mural de Vagas</h1>
+            <p>Encontre estágios e empregos alinhados ao seu curso.</p>
+            <div class="header-tag">
+                Segmentação por curso
+                <span>Nova funcionalidade</span>
+            </div>
+        </header>
+
+        <main>
+            
+            <section id="view-home" class="view active">
+                <div class="section-title" style="margin-top:4px;">
+                    Funcionalidades
+                </div>
+                <p class="section-sub">
+                    Apenas o mural de vagas está disponível neste protótipo. As demais seções estão desativadas.
+                </p>
+                <div class="card-grid">
+                    <div class="feature-card disabled">
+                        <div class="feature-icon">📚</div>
+                        <div class="feature-title">Horários &amp; Aulas</div>
+                        <div class="feature-desc">
+                            Consulte seu horário semanal e as próximas aulas.
+                        </div>
+                        <div class="feature-tag">Indisponível neste protótipo</div>
+                    </div>
+
+                    <div class="feature-card disabled">
+                        <div class="feature-icon">📝</div>
+                        <div class="feature-title">Notas &amp; Faltas</div>
+                        <div class="feature-desc">
+                            Acompanhe o desempenho nas disciplinas.
+                        </div>
+                        <div class="feature-tag">Indisponível neste protótipo</div>
+                    </div>
+
+                    <div class="feature-card" id="card-mural">
+                        <div class="feature-icon ativo">💼</div>
+                        <div class="feature-title">Mural de Vagas</div>
+                        <div class="feature-desc">
+                            Estágios e empregos filtrados pelo seu curso.
+                        </div>
+                        <div class="feature-tag ativo">Nova funcionalidade ativa</div>
+                    </div>
+
+                    <div class="feature-card disabled">
+                        <div class="feature-icon">🏛️</div>
+                        <div class="feature-title">Biblioteca</div>
+                        <div class="feature-desc">
+                            Empréstimos, reservas e histórico de materiais.
+                        </div>
+                        <div class="feature-tag">Indisponível neste protótipo</div>
+                    </div>
+                </div>
+            </section>
+
+            
+            <section id="view-mural" class="view">
+                <div class="back-row">
+                    <button class="btn btn-ghost btn-icon" id="btn-back-home" title="Voltar">
+                        ←
+                    </button>
+                    <span>Mural de vagas</span>
+                </div>
+
+                <div class="filters-card">
+                    <div class="section-title" style="margin-bottom:2px;">
+                        Filtros
+                        <button id="btn-reset-filters" class="btn btn-ghost" style="font-size:11px;padding:4px 8px;">
+                            Limpar
+                        </button>
+                    </div>
+                    <p class="section-sub" style="margin-bottom:4px;">
+                        Vagas sugeridas para o seu curso. Ajuste os filtros se desejar.
+                    </p>
+
+                    <div class="filters-row">
+                        <div class="select-wrap">
+                            <select id="filter-curso"></select>
+                        </div>
+                        <div class="select-wrap">
+                            <select id="filter-modalidade">
+                                <option value="todas">Todas as modalidades</option>
+                                <option value="Presencial">Presencial</option>
+                                <option value="Remoto">Remoto</option>
+                                <option value="Híbrido">Híbrido</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div style="font-size:11px;margin-top:4px;margin-bottom:2px;">
+                        Tipo de vaga
+                    </div>
+                    <div class="chips-row" id="chips-tipo"></div>
+                </div>
+
+                <div class="tabs">
+                    <button class="tab active" data-tab="todas">Todas as vagas</button>
+                    <button class="tab" data-tab="salvas">Vagas salvas</button>
+                </div>
+
+                <div id="lista-vagas"></div>
+            </section>
+
+            
+            <section id="view-detalhe" class="view">
+                <div class="back-row">
+                    <button class="btn btn-ghost btn-icon" id="btn-back-mural">
+                        ←
+                    </button>
+                    <span>Detalhe da vaga</span>
+                </div>
+
+                <div id="detalhe-container"></div>
+            </section>
+        </main>
+
+        <div id="snackbar" class="snackbar">
+            <span>✔</span>
+            <small id="snackbar-text">Ação realizada</small>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
